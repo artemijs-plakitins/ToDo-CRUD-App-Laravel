@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
@@ -9,7 +10,13 @@ class TasksController extends Controller
 
     // Displaying all the tasks
     public function index() {
-        return view ('tasks.index');
+
+        $tasks = Task::orderBy('id', 'DESC')->get();
+        
+        
+        return view ('tasks.index', [
+            'tasks' => $tasks
+        ]);
     }
 
     // Create Task function 
@@ -17,9 +24,17 @@ class TasksController extends Controller
         return view ('tasks.create');
     }
 
-    // We store the data in database
+    // I store the data in database
     public function store() {
-        return request()->all();
+        $task = Task::create([
+            'description'=> request('description')
+        ]);
+
+        // I am returning to a Home page when a task is created
+        // Retrieve all of the tasks when user visits the Homepage
+        // Display all of the tasks that user created
+
+        return redirect('/');
     }
 
 
