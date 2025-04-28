@@ -1,5 +1,9 @@
 # ToDo App Documentation
 
+Welcome to my ToDo app!
+
+![Screenshot of the app](RM-FOTO/screenshot_one.png)
+
 ## Overview
 This project is a simple **ToDo application** built using the **Laravel framework** with **PHP** as the programming language. It allows users to manage tasks through full **CRUD** operations — **Create**, **Read**, **Update**, and **Delete**.
 
