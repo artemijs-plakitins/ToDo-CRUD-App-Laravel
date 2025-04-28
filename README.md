@@ -25,3 +25,12 @@ The application uses **SQLite3** for data storage.
   ```plaintext
   DB_CONNECTION=sqlite
   DB_DATABASE=/absolute/path/to/database.sqlite
+
+## UI Framework
+
+For the user interface, I used **[Bootstrap 5](https://getbootstrap.com/)**, a popular CSS framework, to ensure a responsive, clean, and mobile-friendly design.
+
+- **Responsive layout**: Bootstrap’s grid system automatically adjusts the layout for mobile, tablet, and desktop screens.
+- **Pre-built components**: Buttons, forms, modals, and other UI elements are styled using Bootstrap's components.
+  
+Here’s an example of the UI:
