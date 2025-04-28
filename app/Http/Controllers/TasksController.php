@@ -11,7 +11,9 @@ class TasksController extends Controller
     // Displaying all the tasks
     public function index() {
 
-        $tasks = Task::orderBy('id', 'DESC')->get();
+        $tasks = Task::orderBy('completed_at', 'DESC')
+        ->orderBy('id', 'DESC')
+        ->get();
         
         
         return view ('tasks.index', [
@@ -24,16 +26,20 @@ class TasksController extends Controller
         return view ('tasks.create');
     }
 
-    // I store the data in database
     public function store() {
-        $task = Task::create([
+
+        Task::create([
             'description'=> request('description')
         ]);
 
-        // I am returning to a Home page when a task is created
-        // Retrieve all of the tasks when user visits the Homepage
-        // Display all of the tasks that user created
+        return redirect('/');
+    }
 
+    public function update($id) {
+        $task = Task::where('id', $id) -> first();
+
+        $task -> completed_at = now();
+        $task -> save();
         return redirect('/');
     }
 

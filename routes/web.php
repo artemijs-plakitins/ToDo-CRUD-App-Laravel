@@ -14,3 +14,6 @@ Route::get('/tasks/create', [TasksController::class, 'create']);
 
 // Store
 Route::post('/tasks', [TasksController::class, 'store']);
+
+// Update the state (complete the task)
+Route::patch('/tasks/{id}', [TasksController::class, 'update']);
