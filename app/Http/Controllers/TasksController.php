@@ -11,7 +11,7 @@ class TasksController extends Controller
     // Displaying all the tasks
     public function index() {
 
-        $tasks = Task::orderBy('completed_at', 'DESC')
+        $tasks = Task::orderBy('completed_at', 'ASC')
         ->orderBy('id', 'DESC')
         ->get();
         
@@ -32,7 +32,7 @@ class TasksController extends Controller
             'description'=> request('description')
         ]);
 
-        return redirect('/');
+        return redirect('/'); // redirection to a homepage
     }
 
     public function update($id) {
@@ -40,18 +40,13 @@ class TasksController extends Controller
 
         $task -> completed_at = now();
         $task -> save();
-        return redirect('/');
+        return redirect('/'); // redirection to a homepage
     }
 
+    public function delete($id) {
+        $task = Task::where('id',$id) -> first();
 
-
-
-
-// I handle the tasks submission data
-// CREATE Task
-// DISPLAY LIST of tasks
-// MARK a task as completed
-// DIVIDE the tasks into completed and uncompleted sections
-// DELETE a task permanentlu
-
+        $task -> delete();
+        return redirect('/'); // redirection to a homepage
+    }
 }

@@ -14,12 +14,19 @@
                 <span class="badge text-bg-success mb-3">Completed</span>
             @endif
 
-            <form action="/tasks/{{ $task->id }}" method="POST">
-            @method('PATCH')
-            @csrf
             @if(!$task->isCompleted())
-            <button class="btn btn-danger" type="submit">Complete</button>
-            </form>
+                <form action="/tasks/{{ $task->id }}" method="POST">
+                    @method('PATCH')
+                    @csrf
+                    <button class="btn btn-light" type="submit">Complete</button>
+                </form>
+            @else
+                <form action="/tasks/{{ $task->id }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+
             @endif
         </div>
     </div>

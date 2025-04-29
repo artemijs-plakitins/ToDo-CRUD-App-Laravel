@@ -17,3 +17,6 @@ Route::post('/tasks', [TasksController::class, 'store']);
 
 // Update the state (complete the task)
 Route::patch('/tasks/{id}', [TasksController::class, 'update']);
+
+// Delete the state (button DELETE uppears only when task was completed)
+Route::delete('/tasks/{id}', [TasksController::class, 'delete']);
