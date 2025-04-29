@@ -21,7 +21,6 @@ class TasksController extends Controller
         ]);
     }
 
-    // Create Task function 
     public function create() {
         return view ('tasks.create');
     }
