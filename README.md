@@ -32,5 +32,3 @@ For the user interface, I used **[Bootstrap 5](https://getbootstrap.com/)**, a p
 
 - **Responsive layout**: Bootstrap’s grid system automatically adjusts the layout for mobile, tablet, and desktop screens.
 - **Pre-built components**: Buttons, forms, modals, and other UI elements are styled using Bootstrap's components.
-  
-Here’s an example of the UI:
